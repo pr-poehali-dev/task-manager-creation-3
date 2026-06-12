@@ -186,14 +186,14 @@ function Landing({ onLogin, onRegister }: { onLogin: () => void; onRegister: () 
               Войти
             </button>
             <button onClick={onRegister} className="btn-primary text-sm">
-              Начать бесплатно
+              Создать аккаунт
             </button>
           </div>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="flex-1 flex items-center justify-center px-6 py-20 relative overflow-hidden">
+      <section className="flex items-center justify-center px-6 py-12 relative overflow-hidden">
         {/* Background grid */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -206,27 +206,22 @@ function Landing({ onLogin, onRegister }: { onLogin: () => void; onRegister: () 
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
 
         <div className="relative text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-1.5 mb-8 animate-fade-in-up opacity-0 stagger-1" style={{ animationFillMode: "forwards" }}>
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs text-muted-foreground font-mono">v1.0 · Всё под контролем</span>
-          </div>
-
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 tracking-tight animate-fade-in-up opacity-0 stagger-2" style={{ animationFillMode: "forwards" }}>
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-5 tracking-tight animate-fade-in-up opacity-0 stagger-1" style={{ animationFillMode: "forwards" }}>
             Управляйте<br />
-            задачами чётко
+            задачами быстро
           </h1>
 
-          <p className="text-muted-foreground text-lg leading-relaxed mb-10 animate-fade-in-up opacity-0 stagger-3" style={{ animationFillMode: "forwards" }}>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-8 animate-fade-in-up opacity-0 stagger-2" style={{ animationFillMode: "forwards" }}>
             Минималистичный менеджер задач с календарём, приоритетами,<br className="hidden md:block" />
             тегами и аналитикой. Без лишнего шума.
           </p>
 
-          <div className="flex items-center justify-center gap-4 animate-fade-in-up opacity-0 stagger-4" style={{ animationFillMode: "forwards" }}>
+          <div className="flex items-center justify-center gap-4 animate-fade-in-up opacity-0 stagger-3" style={{ animationFillMode: "forwards" }}>
             <button
               onClick={onRegister}
               className="btn-primary px-8 py-3 text-base font-semibold flex items-center gap-2 rounded-md"
             >
-              Начать бесплатно
+              Создать аккаунт
               <Icon name="ArrowRight" size={16} />
             </button>
             <button onClick={onLogin} className="btn-ghost px-6 py-3 text-base border border-border rounded-md">
@@ -237,10 +232,10 @@ function Landing({ onLogin, onRegister }: { onLogin: () => void; onRegister: () 
       </section>
 
       {/* Features */}
-      <section className="py-20 px-6 border-t border-border bg-card/50">
+      <section className="py-10 px-6 border-t border-border bg-card/50">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="section-header block mb-3">Возможности</span>
+          <div className="text-center mb-6">
+            <span className="section-header block mb-2">Возможности</span>
             <h2 className="text-2xl font-bold">Всё что нужно — и ничего лишнего</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
