@@ -213,11 +213,7 @@ function Landing({ onLogin, onRegister }: { onLogin: () => void; onRegister: () 
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 tracking-tight animate-fade-in-up opacity-0 stagger-2" style={{ animationFillMode: "forwards" }}>
             Управляйте<br />
-            <span className="relative inline-block">
-              задачами
-              <span className="absolute bottom-1 left-0 right-0 h-0.5 bg-primary" />
-            </span>{" "}
-            чётко
+            задачами чётко
           </h1>
 
           <p className="text-muted-foreground text-lg leading-relaxed mb-10 animate-fade-in-up opacity-0 stagger-3" style={{ animationFillMode: "forwards" }}>
