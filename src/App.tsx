@@ -1,5 +1,13 @@
 import { useState, useMemo } from "react";
 import Icon from "@/components/ui/icon";
+import IndexPage from "@/pages/Index";
+
+// ─── Auth State ───────────────────────────────────────────────────────────────
+
+interface User {
+  name: string;
+  email: string;
+}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -805,8 +813,14 @@ const SECTION_TITLES: Record<Section, string> = {
 // ─── Root App ─────────────────────────────────────────────────────────────────
 
 export default function App() {
+  const [user, setUser] = useState<User | null>(null);
   const [section, setSection] = useState<Section>("tasks");
   const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS);
+
+  // Show landing / auth if not logged in
+  if (!user) {
+    return <IndexPage onLogin={(name, email) => setUser({ name, email })} />;
+  }
 
   function addTask(t: Task)    { setTasks(prev => [t, ...prev]); }
   function updateTask(t: Task) { setTasks(prev => prev.map(x => x.id === t.id ? t : x)); }
@@ -883,10 +897,17 @@ export default function App() {
             <div className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
               <Icon name="User" size={13} className="text-muted-foreground" />
             </div>
-            <div className="min-w-0">
-              <p className="text-xs font-medium truncate">Иван Петров</p>
-              <p className="text-xs text-muted-foreground truncate">ivan@example.com</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-medium truncate">{user.name}</p>
+              <p className="text-xs text-muted-foreground truncate">{user.email}</p>
             </div>
+            <button
+              onClick={() => setUser(null)}
+              className="text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
+              title="Выйти"
+            >
+              <Icon name="LogOut" size={13} />
+            </button>
           </div>
         </div>
       </aside>
